@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cinema-bg: #09090b;
+    --cinema-surface: #121215;
+    --cinema-border: #27272a;
+    --cinema-text: #f4f4f5;
+    --cinema-muted: #a1a1aa;
+  }
+
+  html {
+    background-color: #09090b;
+    color: #f4f4f5;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Refined 35mm Film Grain Overlay — Crisp Readability */
+.film-grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.042; /* Clean, subtle organic texture that preserves pristine typography */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: grainJitter 0.22s steps(2) infinite;
+}
+
+@keyframes grainJitter {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-2%, 1.5%); }
+  66% { transform: translate(1.5%, -1.5%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Subtle Cinematic Edge Lens Falloff */
+.cinematic-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background: radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* Typography styles */
+.font-cinematic {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-mono-clean {
+  font-family: 'JetBrains Mono', 'Courier Prime', monospace;
+}
