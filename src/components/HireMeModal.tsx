@@ -40,7 +40,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -56,10 +56,10 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.97, y: 12 }}
           transition={{ duration: 0.2 }}
-          className="relative w-full max-w-lg bg-[#0c0c0e] border border-zinc-800 rounded-2xl shadow-2xl flex flex-col z-10 overflow-hidden text-zinc-100 font-sans"
+          className="relative w-full max-w-lg max-h-[92vh] bg-[#0c0c0e] border border-zinc-800 rounded-2xl shadow-2xl flex flex-col z-10 overflow-y-auto text-zinc-100 font-sans"
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800/80 bg-zinc-950/60">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-zinc-800/80 bg-zinc-950/60 sticky top-0 z-20 backdrop-blur-sm">
             <div>
               <span className="font-mono text-xs font-semibold text-white uppercase tracking-wider">
                 sudo hire me
@@ -67,22 +67,22 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors touch-manipulation"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          <div className="p-6 space-y-5">
+          <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
             {/* Direct Email Line */}
-            <div className="p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 flex items-center justify-between gap-3">
-              <div>
+            <div className="p-3.5 sm:p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 flex items-center justify-between gap-3">
+              <div className="min-w-0">
                 <span className="text-xs text-zinc-400 font-mono block">Direct Inbox:</span>
-                <span className="text-sm font-mono font-medium text-white">{PERSONAL_INFO.email}</span>
+                <span className="text-xs sm:text-sm font-mono font-medium text-white truncate block">{PERSONAL_INFO.email}</span>
               </div>
               <button
                 onClick={copyEmail}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-xs font-mono text-zinc-300 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-xs font-mono text-zinc-300 transition-colors flex-shrink-0 touch-manipulation"
               >
                 {copied ? (
                   <>
@@ -99,7 +99,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </div>
 
             {/* Quick Dispatch Form */}
-            <form onSubmit={handleSendMessage} className="space-y-4">
+            <form onSubmit={handleSendMessage} className="space-y-3.5 sm:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-mono text-zinc-400 mb-1">Your Name</label>
@@ -109,7 +109,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
                     placeholder="Alex"
-                    className="w-full px-3 py-2 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-xs text-white placeholder:text-zinc-600 font-sans"
+                    className="w-full px-3 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-base sm:text-xs text-white placeholder:text-zinc-600 font-sans"
                   />
                 </div>
                 <div>
@@ -120,7 +120,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                     value={senderEmail}
                     onChange={(e) => setSenderEmail(e.target.value)}
                     placeholder="alex@example.com"
-                    className="w-full px-3 py-2 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-xs text-white placeholder:text-zinc-600 font-sans"
+                    className="w-full px-3 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-base sm:text-xs text-white placeholder:text-zinc-600 font-sans"
                   />
                 </div>
               </div>
@@ -133,17 +133,17 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                   value={senderMessage}
                   onChange={(e) => setSenderMessage(e.target.value)}
                   placeholder="Describe your project, team, or opportunity..."
-                  className="w-full px-3 py-2 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-xs text-white placeholder:text-zinc-600 resize-none font-sans"
+                  className="w-full px-3 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-400 focus:outline-none text-base sm:text-xs text-white placeholder:text-zinc-600 resize-none font-sans"
                 />
               </div>
 
-              <div className="flex items-center justify-between pt-2">
+              <div className="flex items-center justify-between pt-2 gap-3">
                 <span className="text-[11px] font-mono text-zinc-400">
                   Responds within 24h
                 </span>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-medium text-xs tracking-wider uppercase transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-medium text-xs tracking-wider uppercase transition-colors min-h-[42px] touch-manipulation cursor-pointer"
                 >
                   {sentSuccess ? (
                     <>

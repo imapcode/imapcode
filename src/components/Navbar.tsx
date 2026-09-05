@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
           : 'bg-white/90 backdrop-blur-sm border-b border-zinc-200/70 py-4 shadow-xs'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 relative flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative flex items-center justify-between">
         {/* Brand (IMAPCODE only - removed sudo hire me) */}
         <a
           href="#home"
@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
           ))}
           <button
             onClick={onOpenResumeModal}
-            className="text-xs tracking-wider uppercase font-semibold text-zinc-600 hover:text-zinc-950 transition-colors flex items-center gap-1"
+            className="text-xs tracking-wider uppercase font-semibold text-zinc-600 hover:text-zinc-950 transition-colors flex items-center gap-1 cursor-pointer"
           >
             <span>Resume</span>
             <ArrowUpRight className="w-3 h-3 opacity-70" />
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-zinc-900 hover:text-zinc-600 transition-colors"
+          className="md:hidden p-2 rounded-lg text-zinc-900 hover:bg-zinc-100 transition-colors touch-manipulation min-w-[40px] min-h-[40px] flex items-center justify-center"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5 text-zinc-950" /> : <Menu className="w-5 h-5 text-zinc-950" />}
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="md:hidden bg-white border-b border-zinc-200 px-6 py-6 shadow-xl space-y-4"
+            className="md:hidden bg-white border-b border-zinc-200 px-5 py-5 sm:px-6 sm:py-6 shadow-xl space-y-4"
           >
             <nav className="flex flex-col gap-3.5">
               {navLinks.map((link) => (
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-semibold tracking-wide text-zinc-800 hover:text-zinc-950 transition-colors"
+                  className="text-sm font-semibold tracking-wide text-zinc-800 hover:text-zinc-950 transition-colors py-1"
                 >
                   {link.label}
                 </a>
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenHireModal, onOpenResumeMod
                   setMobileMenuOpen(false);
                   onOpenResumeModal();
                 }}
-                className="text-left text-sm font-semibold tracking-wide text-zinc-800 hover:text-zinc-950 transition-colors flex items-center justify-between"
+                className="text-left text-sm font-semibold tracking-wide text-zinc-800 hover:text-zinc-950 transition-colors flex items-center justify-between py-1"
               >
                 <span>Resume</span>
                 <ArrowUpRight className="w-4 h-4 text-zinc-500" />

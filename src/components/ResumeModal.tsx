@@ -72,7 +72,7 @@ EDUCATION
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -88,37 +88,37 @@ EDUCATION
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.97, y: 12 }}
           transition={{ duration: 0.2 }}
-          className="relative w-full max-w-3xl max-h-[90vh] bg-[#0c0c0e] border border-zinc-800 rounded-2xl shadow-2xl flex flex-col z-10 overflow-hidden text-zinc-100 font-sans"
+          className="relative w-full max-w-3xl max-h-[92vh] bg-[#0c0c0e] border border-zinc-800 rounded-2xl shadow-2xl flex flex-col z-10 overflow-hidden text-zinc-100 font-sans"
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800/80 bg-zinc-950/60">
-            <div>
-              <span className="font-mono text-xs font-semibold text-white uppercase tracking-wider">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-zinc-800/80 bg-zinc-950/60 sticky top-0 z-20 backdrop-blur-sm">
+            <div className="min-w-0 pr-2">
+              <span className="font-mono text-xs font-semibold text-white uppercase tracking-wider truncate block">
                 {PERSONAL_INFO.name} — Resume
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
               <button
                 onClick={handleDownload}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium transition-colors touch-manipulation min-h-[36px]"
               >
                 {downloadSuccess ? (
                   <>
                     <CheckCircle className="w-3.5 h-3.5" />
-                    <span>Downloaded</span>
+                    <span className="hidden xs:inline">Downloaded</span>
                   </>
                 ) : (
                   <>
                     <Download className="w-3.5 h-3.5" />
-                    <span>Download TXT</span>
+                    <span>Download<span className="hidden sm:inline"> TXT</span></span>
                   </>
                 )}
               </button>
 
               <button
                 onClick={handlePrint}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-xs border border-zinc-800 transition-colors"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-xs border border-zinc-800 transition-colors min-h-[36px]"
                 title="Print Resume"
               >
                 <Printer className="w-3.5 h-3.5" />
@@ -127,7 +127,7 @@ EDUCATION
 
               <button
                 onClick={onClose}
-                className="p-1 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-1"
+                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-1 touch-manipulation min-h-[36px] min-w-[36px] flex items-center justify-center"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
@@ -136,7 +136,7 @@ EDUCATION
           </div>
 
           {/* Document Content */}
-          <div className="overflow-y-auto p-6 sm:p-8 space-y-8 text-sm">
+          <div className="overflow-y-auto p-4 sm:p-8 space-y-6 sm:space-y-8 text-xs sm:text-sm">
             {/* Intro */}
             <div className="border-b border-zinc-800 pb-6 flex flex-col sm:flex-row justify-between sm:items-start gap-4">
               <div>

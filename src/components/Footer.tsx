@@ -13,8 +13,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenHireMod
   };
 
   return (
-    <footer className="border-t border-zinc-200 bg-white py-12 relative">
-      <div className="max-w-4xl mx-auto px-6">
+    <footer className="border-t border-zinc-200 bg-white py-10 sm:py-12 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-zinc-200">
           {/* Brand */}
           <div className="space-y-1">
@@ -32,12 +32,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenHireMod
           </div>
 
           {/* Quick links */}
-          <div className="flex flex-wrap items-center gap-5 text-xs font-mono">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5 text-xs font-mono">
             <a
               href="https://github.com/imapcode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors"
+              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1"
             >
               GitHub
             </a>
@@ -45,19 +45,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenHireMod
               href="https://linkedin.com/in/imapcode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors"
+              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1"
             >
               LinkedIn
             </a>
             <button
               onClick={onOpenResumeModal}
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors"
+              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1 cursor-pointer"
             >
               Resume
             </button>
             <button
               onClick={onOpenHireModal}
-              className="text-zinc-950 hover:text-zinc-700 underline font-semibold transition-colors"
+              className="text-zinc-950 hover:text-zinc-700 underline font-semibold transition-colors py-1 cursor-pointer"
             >
               sudo hire me
             </button>
@@ -65,11 +65,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenHireMod
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 flex items-center justify-between text-xs text-zinc-600 font-mono">
+        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-zinc-600 font-mono">
           <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</span>
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-lg bg-zinc-100 border border-zinc-200 text-zinc-700 hover:text-zinc-950 hover:bg-zinc-200 transition-colors"
+            className="p-2 rounded-lg bg-zinc-100 border border-zinc-200 text-zinc-700 hover:text-zinc-950 hover:bg-zinc-200 transition-colors touch-manipulation cursor-pointer"
             aria-label="Back to top"
           >
             <ArrowUp className="w-3.5 h-3.5" />

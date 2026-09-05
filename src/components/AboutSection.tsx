@@ -18,20 +18,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
   };
 
   return (
-    <section id="about" className="py-20 md:py-28 relative border-t border-zinc-900">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="about" className="py-14 sm:py-20 md:py-28 relative border-t border-zinc-900">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         {/* Section Title */}
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-cinematic font-bold tracking-tight text-white">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-cinematic font-bold tracking-tight text-white">
             About Me
           </h2>
-          <p className="text-zinc-400 text-sm mt-2 max-w-lg font-editorial italic">
+          <p className="text-zinc-400 text-xs sm:text-sm mt-2 max-w-lg font-editorial italic">
             Background, engineering philosophy, and communication channels.
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           
           {/* A Small Para About Me */}
           <motion.div
@@ -39,20 +39,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="p-6 sm:p-8 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-5"
+            className="p-5 sm:p-8 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-4 sm:space-y-5"
           >
-            <p className="text-base sm:text-lg text-zinc-200 leading-relaxed font-light">
+            <p className="text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-light">
               {PERSONAL_INFO.bio}
             </p>
 
             <div className="pt-4 border-t border-zinc-900 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-              <div className="flex items-center gap-2 text-zinc-400">
-                <Mail className="w-3.5 h-3.5 text-zinc-300" />
-                <span className="text-zinc-300">{PERSONAL_INFO.email}</span>
+              <div className="flex items-center gap-2 text-zinc-400 min-w-0">
+                <Mail className="w-3.5 h-3.5 text-zinc-300 flex-shrink-0" />
+                <span className="text-zinc-300 truncate">{PERSONAL_INFO.email}</span>
               </div>
               <button
                 onClick={copyEmail}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-white hover:border-zinc-600 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-white hover:border-zinc-600 transition-colors touch-manipulation"
               >
                 {copied ? (
                   <>
@@ -71,11 +71,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
 
           {/* MY LINKS (specifically requested in prompt) */}
           <div id="links" className="space-y-4">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-zinc-400">
+            <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400">
               My Links
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               {/* GitHub */}
               <motion.a
                 href="https://github.com/imapcode"
@@ -83,7 +83,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
                 rel="noopener noreferrer"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between"
+                className="group p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -111,7 +111,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
                 rel="noopener noreferrer"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between"
+                className="group p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -137,7 +137,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
                 onClick={onOpenResumeModal}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between text-left"
+                className="group p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between text-left sm:col-span-2 md:col-span-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -162,15 +162,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
 
           {/* Technical Skills & Capabilities */}
           <div className="space-y-4 pt-2">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-zinc-400">
+            <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400">
               Technical Capabilities
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {SKILL_CATEGORIES.map((category, index) => (
                 <div
                   key={index}
-                  className="p-5 rounded-xl bg-zinc-950/40 border border-zinc-800/70 space-y-2.5"
+                  className="p-4 sm:p-5 rounded-xl bg-zinc-950/40 border border-zinc-800/70 space-y-2.5"
                 >
                   <h4 className="text-xs font-mono font-semibold text-zinc-300 uppercase tracking-wider">
                     {category.title}
@@ -179,7 +179,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 font-mono"
+                        className="px-2 sm:px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] sm:text-xs text-zinc-300 font-mono"
                       >
                         {skill}
                       </span>

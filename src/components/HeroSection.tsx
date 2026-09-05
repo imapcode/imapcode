@@ -328,11 +328,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
   };
 
   return (
-    <section id="home" className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="home" className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Soft atmospheric gradient */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-white/[0.025] blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[600px] h-[250px] sm:h-[350px] bg-white/[0.025] blur-[100px] sm:blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-4xl mx-auto px-6 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative">
         <div className="flex flex-col items-center text-center">
 
           {/* Website Name: IMAPCODE */}
@@ -340,7 +340,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-6xl sm:text-8xl md:text-9xl font-cinematic font-black tracking-tight text-white select-none leading-none"
+            className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-cinematic font-black tracking-tight text-white select-none leading-none"
           >
             {PERSONAL_INFO.name}
           </motion.h1>
@@ -353,12 +353,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex justify-center mt-7"
+            className="flex justify-center mt-6 sm:mt-7 w-full"
           >
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/90 shadow-2xl backdrop-blur-md">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/90 shadow-2xl backdrop-blur-md max-w-full">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-zinc-950 font-medium text-xs tracking-wider uppercase hover:bg-zinc-200 transition-all shadow-md group"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-white text-zinc-950 font-medium text-xs tracking-wider uppercase hover:bg-zinc-200 transition-all shadow-md group"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -366,7 +366,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
 
               <button
                 onClick={onOpenHireModal}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 font-mono text-xs tracking-wider hover:bg-zinc-800 hover:text-white hover:border-zinc-600 transition-all"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 font-mono text-xs tracking-wider hover:bg-zinc-800 hover:text-white hover:border-zinc-600 transition-all"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>sudo hire me</span>
@@ -374,7 +374,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
 
               <button
                 onClick={onOpenResumeModal}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-zinc-400 font-medium text-xs tracking-wider uppercase hover:text-white hover:bg-zinc-900/60 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2.5 rounded-xl text-zinc-400 font-medium text-xs tracking-wider uppercase hover:text-white hover:bg-zinc-900/60 transition-colors"
               >
                 <span>Resume</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
@@ -387,16 +387,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.38 }}
-            className="w-full max-w-2xl mt-12 rounded-xl bg-zinc-950/90 border border-zinc-800/90 text-left overflow-hidden shadow-2xl backdrop-blur-md"
+            className="w-full max-w-2xl mt-8 sm:mt-12 rounded-xl bg-zinc-950/90 border border-zinc-800/90 text-left overflow-hidden shadow-2xl backdrop-blur-md"
             onClick={() => terminalInputRef.current?.focus()}
           >
             {/* Terminal Bar */}
-            <div className="px-4 py-2.5 bg-zinc-900/80 border-b border-zinc-800/80 flex items-center justify-between text-xs text-zinc-400 font-mono">
+            <div className="px-3.5 sm:px-4 py-2.5 bg-zinc-900/80 border-b border-zinc-800/80 flex items-center justify-between text-xs text-zinc-400 font-mono">
               <div className="flex items-center gap-2">
                 <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-[11px] text-zinc-300 font-semibold">imapcode@runtime: ~</span>
+                <span className="text-[11px] text-zinc-300 font-semibold truncate">imapcode@runtime: ~</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -417,9 +417,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
             </div>
 
             {/* Terminal Body */}
-            <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm space-y-3">
+            <div className="p-3.5 sm:p-5 font-mono text-xs sm:text-sm space-y-3">
               {/* Quick Interactive Command Suggestion Chips */}
-              <div className="flex flex-wrap items-center gap-1.5 pb-1">
+              <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 pb-1">
                 <span className="text-[10px] text-zinc-500 uppercase tracking-wider mr-1">Quick:</span>
                 {['sudo hire me', 'skills', 'projects', 'whoami', 'matrix', 'clear'].map((cmd) => (
                   <button
@@ -440,9 +440,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
                 <div key={idx} className="space-y-1.5">
                   <div className="flex items-center gap-2 text-zinc-400">
                     <span className="text-emerald-500 font-bold">$</span>
-                    <span className="text-white font-medium">{item.cmd}</span>
+                    <span className="text-white font-medium break-all">{item.cmd}</span>
                   </div>
-                  <div className="text-zinc-300 pl-3 border-l-2 border-zinc-800 text-xs sm:text-sm leading-relaxed">
+                  <div className="text-zinc-300 pl-2.5 sm:pl-3 border-l-2 border-zinc-800 text-xs sm:text-sm leading-relaxed overflow-x-auto">
                     {item.output}
                   </div>
                 </div>
@@ -458,7 +458,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
                   onChange={(e) => setTerminalInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="type 'help', 'skills', or 'sudo hire me'..."
-                  className="flex-1 bg-transparent border-none outline-none text-emerald-300 placeholder:text-zinc-600 text-xs sm:text-sm font-mono"
+                  className="flex-1 bg-transparent border-none outline-none text-emerald-300 placeholder:text-zinc-600 text-sm sm:text-xs md:text-sm font-mono"
                   autoComplete="off"
                   spellCheck="false"
                 />
@@ -471,7 +471,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
                 </button>
               </div>
 
-              <div className="text-[10px] text-zinc-600 flex items-center justify-between pt-1">
+              <div className="text-[10px] text-zinc-600 flex flex-col sm:flex-row items-start sm:items-center justify-between pt-1 gap-1 sm:gap-0">
                 <span>Tab to autocomplete · ↑ / ↓ for history</span>
                 <span>Type 'help' for full command catalog</span>
               </div>
