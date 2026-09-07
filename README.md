@@ -54,11 +54,7 @@ portfolio: https://imapcode.vercel.app
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/imapcode">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=imapcode&theme=tokyonight&area=true&hide_border=true" width="100%" alt="Activity Graph" />
-  </a>
-</p>
+
 
 ### 🛠️ Tech Stack & Arsenal
 
