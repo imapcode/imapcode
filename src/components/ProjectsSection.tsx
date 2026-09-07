@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Github, ArrowUpRight, Check, Copy, Braces, Terminal } from 'lucide-react';
+import { Github, ArrowUpRight, Check, Copy, Braces, Terminal, ExternalLink } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { cardAudio } from '../utils/cardAudio';
 
@@ -30,13 +30,16 @@ export const ProjectsSection: React.FC = () => {
   const handleCopyJson = (e: React.MouseEvent, project: (typeof PROJECTS)[0]) => {
     e.stopPropagation();
     const cleanStr = (s: string) => s.replace(/[*`]/g, '');
-    const jsonOutput = {
+    const jsonOutput: Record<string, any> = {
       project: project.title,
       stack: project.tags,
       architecture: project.highlights.map(cleanStr),
       metrics: project.metrics,
-      repository: project.githubUrl
+      repository: project.githubUrl,
     };
+    if (project.liveUrl && project.liveUrl !== project.githubUrl) {
+      jsonOutput.deployment = project.liveUrl;
+    }
     navigator.clipboard.writeText(JSON.stringify(jsonOutput, null, 2));
     setCopiedId(project.id);
     cardAudio.playSelect();
@@ -223,6 +226,24 @@ export const ProjectsSection: React.FC = () => {
                     </div>
                   )}
 
+                  {/* "deployment" */}
+                  {project.liveUrl && project.liveUrl !== project.githubUrl && (
+                    <div className="pl-4 flex flex-wrap items-baseline gap-x-1.5">
+                      <span className="text-sky-400 font-medium">"deployment"</span>
+                      <span className="text-zinc-500">:</span>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-300 hover:text-emerald-200 underline decoration-zinc-700 hover:decoration-emerald-400 transition-colors inline-flex items-center gap-1"
+                      >
+                        <span>"{project.liveUrl}"</span>
+                        <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                      </a>
+                      <span className="text-zinc-500">,</span>
+                    </div>
+                  )}
+
                   {/* "repository" */}
                   <div className="pl-4 flex flex-wrap items-baseline gap-x-1.5">
                     <span className="text-sky-400 font-medium">"repository"</span>
@@ -254,16 +275,31 @@ export const ProjectsSection: React.FC = () => {
                   <span className="hidden sm:inline text-zinc-500 text-[11px]">UTF-8</span>
                 </div>
 
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors text-[11px]"
-                >
-                  <Github className="w-3 h-3" />
-                  <span>View Source</span>
-                  <ArrowUpRight className="w-3 h-3 text-zinc-500" />
-                </a>
+                <div className="flex items-center gap-2.5">
+                  {project.liveUrl && project.liveUrl !== project.githubUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-950/50 hover:bg-emerald-900/60 border border-emerald-500/30 text-emerald-300 hover:text-emerald-200 transition-colors text-[11px] font-medium"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      <span>Live App</span>
+                      <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                    </a>
+                  )}
+
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors text-[11px]"
+                  >
+                    <Github className="w-3 h-3" />
+                    <span>View Source</span>
+                    <ArrowUpRight className="w-3 h-3 text-zinc-500" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

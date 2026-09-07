@@ -81,27 +81,27 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: 'image-file-manipulation-system',
-    title: 'Image File Manipulation System',
-    subtitle: 'OpenCV, Pillow, Tkinter',
-    filename: 'image_pipeline.json',
+    id: 'yggdrasil',
+    title: 'Yggdrasil',
+    subtitle: 'Python, OpenCV, Next.js, Vercel',
+    filename: 'yggdrasil.json',
     language: 'json',
-    projectType: 'Personal Project',
-    description: 'Zero-copy image pipeline with in-memory buffering to bypass disk I/O bottlenecks and event-driven batch processing.',
+    projectType: 'Production Web App & CLI',
+    description: 'Python CLI and high-performance image manipulation utility for conversion, compression, resizing, deep learning colorization, and file metadata management.',
     category: 'Python',
-    tags: ['OpenCV', 'Pillow', 'Tkinter', 'Python'],
-    githubUrl: 'https://github.com/imapcode/image-file-manipulation',
-    liveUrl: 'https://github.com/imapcode/image-file-manipulation',
+    tags: ['Python', 'OpenCV', 'Next.js', 'Vercel', 'Pillow'],
+    githubUrl: 'https://github.com/imapcode/yggdrasil',
+    liveUrl: 'https://yggdrasil-delta.vercel.app/',
     featured: true,
-    metrics: 'Zero-disk overhead in-memory buffering',
+    metrics: 'Production live on Vercel & zero-disk in-memory pipeline',
     highlights: [
-      '*In-memory buffering* via `Pillow` to eliminate disk I/O bottlenecks',
-      '*Event-driven* `Tkinter` GUI decoupled from `OpenCV` processing engine',
-      '*Batch pipeline* for automated resizing, format conversion & compression'
+      '*Interactive Web & CLI* architecture deployed on Vercel with real-time browser sandbox',
+      '*Zero-copy image conversion* & intelligent compression presets via `Pillow` & `OpenCV`',
+      '*Deep learning colorization* pipeline with aspect-ratio preserved batch processing'
     ],
     resumeBullets: [
-      'Designed a modular pipeline architecture separating I/O, processing, and rendering layers; applied in-memory buffering via Pillow to avoid redundant disk reads between chained operations.',
-      'Built file-dialog box input and output using Tkinter with event-driven control flow, decoupling user interactions from core image processing logic; supported batch compression, conversion, resizing, and grayscale colorization.'
+      'Architected and deployed Yggdrasil, a high-performance image manipulation utility and interactive web app on Vercel supporting format conversion, intelligent compression, resizing, and deep learning colorization.',
+      'Engineered zero-copy in-memory buffering via Pillow and OpenCV to bypass disk I/O bottlenecks; built dual interfaces including an event-driven Python CLI engine and a responsive Next.js frontend.'
     ]
   },
   {

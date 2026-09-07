@@ -186,11 +186,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
     } else if (raw === 'whoami') {
       res = (
         <div className="space-y-1">
-          <div className="text-white font-semibold">alex@imapcode (uid=1000, gid=1000)</div>
+          <div className="text-white font-semibold">aryan@imapcode (uid=1000, gid=1000)</div>
           <div className="text-zinc-400 text-xs">
-            Role: Full-Stack Craftsman & Distributed Systems Software Engineer.
+            Role: {PERSONAL_INFO.tagline}
           </div>
-          <div className="text-zinc-400 text-xs">Status: Available for full-stack engineering & contracts.</div>
+          <div className="text-zinc-400 text-xs">Status: {PERSONAL_INFO.status}</div>
         </div>
       );
     } else if (raw === 'about' || raw === 'cat about.txt' || raw === 'bio') {
@@ -201,16 +201,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenHireModal, onOpe
           <div className="text-zinc-400 text-[11px] uppercase tracking-wider">Selected Works:</div>
           <ul className="space-y-1 text-xs text-zinc-300">
             <li>
-              <span className="text-emerald-400 font-semibold">• Synapse Queue:</span> High-throughput distributed task broker.
+              <span className="text-emerald-400 font-semibold">• Yggdrasil:</span> Python CLI & live web app for image manipulation (yggdrasil-delta.vercel.app).
             </li>
             <li>
-              <span className="text-emerald-400 font-semibold">• Nexus Cloud Studio:</span> Real-time collaborative infrastructure IDE.
+              <span className="text-emerald-400 font-semibold">• 2D Game Engine:</span> Fixed-timestep physics update cycle & decoupled rendering.
             </li>
             <li>
-              <span className="text-emerald-400 font-semibold">• Sentinel AI:</span> Edge-deployed LLM evaluation agent.
+              <span className="text-emerald-400 font-semibold">• Wallpaper Engine:</span> Low-level Windows registry interface for direct OS desktop control.
             </li>
             <li>
-              <span className="text-emerald-400 font-semibold">• HyperState Canvas:</span> 60fps infinite collaborative canvas engine.
+              <span className="text-emerald-400 font-semibold">• YouTube Downloader & Metadata Embedder:</span> Fault-isolated download queue & ID3 tagging.
             </li>
           </ul>
           <a
