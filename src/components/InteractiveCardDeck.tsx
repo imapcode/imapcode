@@ -160,11 +160,6 @@ export const InteractiveCardDeck: React.FC<InteractiveCardDeckProps> = ({ onSele
             })}
           </div>
         </div>
-
-        {/* Tactical caption */}
-        <p className="text-[10px] sm:text-[11px] font-mono tracking-widest text-zinc-500 uppercase text-center mt-2 sm:mt-4">
-          Scroll to fan deck · 8-card architecture suite
-        </p>
       </div>
     </section>
   );

@@ -1,19 +1,24 @@
-import { Project, SocialLink, SkillCategory, ExperienceItem } from '../types';
+import { Project, SocialLink, SkillCategory, EducationItem } from '../types';
 
 export const PERSONAL_INFO = {
   name: 'IMAPCODE',
+  realName: 'Aryan Mishra',
+  handle: 'imapcode',
+  website: 'imapcode.vercel.app',
+  resumeDriveUrl: 'https://drive.google.com/file/d/1thwzIaNz9BG-e6E2_u3wewugRrTaLdih/view?usp=sharing',
   caption: 'SUDO HIRE ME',
-  tagline: 'Full-Stack Software Engineer & Distributed Systems Craftsman',
-  status: 'Ready to build high-scale products & production infrastructure',
-  location: 'Remote / Global',
-  email: 'hire@imapcode.dev',
-  bio: `I am a software engineer focused on building resilient full-stack web applications, lightning-fast developer tools, and scalable distributed architectures. Driven by a deep appreciation for systems programming, clean interface aesthetics, and zero-compromise runtime performance, I bridge the gap between heavy backend engineering and pixel-precise, accessible user experiences.`,
-  shortBio: `Full-stack engineer crafting bulletproof web applications, distributed APIs, and developer-first infrastructure. Obsessed with clean abstractions, microsecond optimizations, and user-centric software craft.`,
+  tagline: 'Computer Science Undergraduate & Systems Craftsman',
+  status: 'Ready to build high-scale software & backend infrastructure',
+  location: 'Delhi, India',
+  phone: '+91 9958186079',
+  email: 'student.aryanmishra@gmail.com',
+  bio: `Computer Science undergraduate skilled in modern software development practices. Strong foundation in Data Structures, Algorithms, Operating Systems, Database Management Systems, and Computer Networks, with a keen interest in software engineering, backend development, and scalable system design.`,
+  shortBio: `Computer Science undergraduate specializing in backend development, systems programming, and scalable architecture. Proficient in C, C++, Python, and modern software craft.`,
   stats: [
-    { label: 'Years of Experience', value: '4+' },
-    { label: 'Production Projects', value: '25+' },
-    { label: 'Open Source Commits', value: '1.2k+' },
-    { label: 'System Uptime Delivered', value: '99.98%' },
+    { label: 'Core Projects', value: '4' },
+    { label: 'Primary Tech', value: 'C++, Python' },
+    { label: 'Degree CGPA', value: '7.5' },
+    { label: 'Graduation Year', value: '2027' },
   ]
 };
 
@@ -24,7 +29,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Explore Source Code',
     url: 'https://github.com/imapcode',
     handle: '@imapcode',
-    description: 'Repositories, open-source tools, system experiments, and star-worthy codebases.',
+    description: 'Repositories, open-source tools, systems projects, and star-worthy codebases.',
     icon: 'github',
   },
   {
@@ -33,7 +38,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Connect Professionally',
     url: 'https://linkedin.com/in/imapcode',
     handle: 'in/imapcode',
-    description: 'Career track record, endorsements, professional network, and technical updates.',
+    description: 'Career track record, academic profile, professional network, and technical updates.',
     icon: 'linkedin',
   },
   {
@@ -41,157 +46,159 @@ export const SOCIAL_LINKS: SocialLink[] = [
     name: 'Resume',
     label: 'View Full CV / Resume',
     url: '#resume',
-    handle: 'IMAPCODE_Resume.pdf',
-    description: 'Detailed work history, technical stack breakdown, certifications, and impact metrics.',
+    handle: 'Aryan_Mishra_Resume.pdf',
+    description: 'Detailed education, academic coursework, technical stack breakdown, and projects.',
     icon: 'file-text',
   },
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: 'Languages & Core',
-    skills: ['TypeScript', 'JavaScript (ESNext)', 'Go', 'Python', 'Rust (Basics)', 'SQL (Postgres)', 'HTML5/CSS3']
+    title: 'Languages',
+    skills: ['C', 'C++', 'Java', 'Python', 'Bash']
   },
   {
-    title: 'Frontend Architecture',
-    skills: ['React 18/19', 'Next.js', 'Tailwind CSS', 'Motion / Animations', 'Zustand / Redux', 'Vite', 'WebSockets']
+    title: 'Web & Frontend',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React']
   },
   {
-    title: 'Backend & Distributed Systems',
-    skills: ['Node.js / Express', 'Go Gin / Fiber', 'PostgreSQL', 'Redis', 'Kafka / RabbitMQ', 'REST & GraphQL', 'gRPC']
+    title: 'Backend & Frameworks',
+    skills: ['Flask', 'MongoDB']
   },
   {
-    title: 'Cloud, DevOps & Tooling',
-    skills: ['Docker & Containers', 'Kubernetes', 'AWS & Cloudflare', 'CI/CD (GitHub Actions)', 'Linux / Bash Scripting', 'Nginx']
+    title: 'Databases',
+    skills: ['PostgreSQL', 'MySQL']
+  },
+  {
+    title: 'DevOps & Cloud',
+    skills: ['Git', 'GitHub', 'Docker', 'AWS', 'Bash']
+  },
+  {
+    title: 'Tools & Design',
+    skills: ['Wireshark', 'Figma', 'Photoshop']
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    id: 'synapse-queue',
-    title: 'Synapse Queue',
-    subtitle: 'High-Throughput Distributed Message Streamer & Broker',
-    description: 'A lightweight distributed pub/sub event engine with zero-copy binary serialization, disk persistence, and real-time WebSocket observability cluster.',
-    category: 'Systems & Backend',
-    tags: ['Go', 'TypeScript', 'WebSockets', 'Redis', 'Docker', 'Tailwind'],
-    githubUrl: 'https://github.com/imapcode/synapse-queue',
-    liveUrl: 'https://synapse-demo.imapcode.dev',
+    id: 'image-file-manipulation-system',
+    title: 'Image File Manipulation System',
+    subtitle: 'OpenCV, Pillow, Tkinter',
+    filename: 'image_pipeline.json',
+    language: 'json',
+    projectType: 'Personal Project',
+    description: 'Zero-copy image pipeline with in-memory buffering to bypass disk I/O bottlenecks and event-driven batch processing.',
+    category: 'Python',
+    tags: ['OpenCV', 'Pillow', 'Tkinter', 'Python'],
+    githubUrl: 'https://github.com/imapcode/image-file-manipulation',
+    liveUrl: 'https://github.com/imapcode/image-file-manipulation',
     featured: true,
-    metrics: 'Handles 120,000 msgs/sec with sub-millisecond p99 latency',
+    metrics: 'Zero-disk overhead in-memory buffering',
     highlights: [
-      'Engineered ring-buffer memory storage with WAL (Write-Ahead-Log) crash resilience',
-      'Designed interactive visual telemetry monitoring dashboard with real-time consumer lag metrics',
-      'Implemented customizable partitioning strategies and consumer groups auto-rebalancing'
+      '*In-memory buffering* via `Pillow` to eliminate disk I/O bottlenecks',
+      '*Event-driven* `Tkinter` GUI decoupled from `OpenCV` processing engine',
+      '*Batch pipeline* for automated resizing, format conversion & compression'
+    ],
+    resumeBullets: [
+      'Designed a modular pipeline architecture separating I/O, processing, and rendering layers; applied in-memory buffering via Pillow to avoid redundant disk reads between chained operations.',
+      'Built file-dialog box input and output using Tkinter with event-driven control flow, decoupling user interactions from core image processing logic; supported batch compression, conversion, resizing, and grayscale colorization.'
     ]
   },
   {
-    id: 'nexus-cloud',
-    title: 'Nexus Cloud Studio',
-    subtitle: 'Full-Stack Serverless Application & API Management Platform',
-    description: 'Developer workspace for orchestrating microservices, environment deployments, instant preview branches, and secure environment secrets with audit logs.',
-    category: 'Full Stack',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker API'],
-    githubUrl: 'https://github.com/imapcode/nexus-cloud',
-    liveUrl: 'https://nexus.imapcode.dev',
+    id: '2d-game-engine',
+    title: '2D Game Engine',
+    subtitle: 'C++, SFML',
+    filename: 'game_engine.json',
+    language: 'json',
+    projectType: 'Personal Project',
+    description: 'Component-based game loop with fixed-timestep physics updates and decoupled rendering subsystems.',
+    category: 'C++',
+    tags: ['C++', 'SFML', 'Game Loop', 'Physics'],
+    githubUrl: 'https://github.com/imapcode/2d-game-engine',
+    liveUrl: 'https://github.com/imapcode/2d-game-engine',
     featured: true,
-    metrics: 'Active developer tool powering 400+ weekly micro-deployments',
+    metrics: 'Fixed-timestep cycle & AABB collision detection',
     highlights: [
-      'Multi-tenant role-based access control (RBAC) with cryptographic session signing',
-      'Integrated live log streaming via SSE (Server-Sent Events) and container health probes',
-      'One-click ephemeral branch preview generation via Docker daemon automation'
+      '*Component-based game loop* with *fixed-timestep* tick cycle (`SFML`)',
+      '*Isolated subsystems*: decoupled input, physics, and sprite rendering',
+      '`AABB` *collision detection* with `FSM` entity state machines'
+    ],
+    resumeBullets: [
+      'Architected a component-based game loop with fixed-timestep update cycle, separating input, physics, and rendering into distinct subsystems for frame-rate independence.',
+      'Implemented AABB collision detection and a finite state machine for character states (idle, moving, shooting), decoupling game logic from sprite/animation rendering.'
     ]
   },
   {
-    id: 'sentinel-ai',
-    title: 'Sentinel Code Audit',
-    subtitle: 'Automated Static Security & AST Vulnerability Scanner',
-    description: 'Developer command-line tool and web dashboard analyzing Git commits for hardcoded secrets, SQL injection vectors, and dependency CVE exploits.',
-    category: 'Developer Tools',
-    tags: ['TypeScript', 'Rust Parser', 'Node.js', 'React', 'Tailwind CSS', 'CLI'],
-    githubUrl: 'https://github.com/imapcode/sentinel-audit',
-    liveUrl: 'https://sentinel.imapcode.dev',
+    id: 'wallpaper-engine',
+    title: 'Wallpaper Engine',
+    subtitle: 'Python, Winreg, ctypes',
+    filename: 'wallpaper_engine.json',
+    language: 'json',
+    projectType: 'Personal Project',
+    description: 'Low-level Windows registry interface for direct OS desktop control with O(1) directory navigation.',
+    category: 'Python',
+    tags: ['Python', 'Winreg', 'ctypes', 'Windows API'],
+    githubUrl: 'https://github.com/imapcode/wallpaper-engine',
+    liveUrl: 'https://github.com/imapcode/wallpaper-engine',
     featured: true,
-    metrics: '99.4% detection accuracy across 15+ common vulnerability suites',
+    metrics: 'Direct OS registry control & O(1) keyboard indexing',
     highlights: [
-      'Abstract Syntax Tree (AST) pattern engine scanning 10,000 LOC under 180 milliseconds',
-      'Generates interactive HTML audit reports with inline patch suggestions and remediation diffs',
-      'GitHub Action integration with automated PR comments and status checks'
+      '*Low-level OS hooks* via `winreg` & `ctypes` for *zero-latency* writes',
+      '`O(1)` *directory indexer* for instant keyboard-driven swapping',
+      '*Decoupled architecture*: input listener isolated from desktop manager'
+    ],
+    resumeBullets: [
+      'Built a low-level Windows registry interface using winreg and ctypes for direct OS wallpaper control, bypassing high-level APIs.',
+      'Designed a directory indexing system for O(1) keyboard-driven navigation, decoupling input handling from wallpaper state management.'
     ]
   },
   {
-    id: 'hyper-state',
-    title: 'HyperState Canvas',
-    subtitle: 'Collaborative Infinite Whiteboard & Architecture Diagrammer',
-    description: 'Ultra-responsive 60fps multiplayer vector diagramming application supporting real-time cursors, markdown notes, code snippet blocks, and export to SVG.',
-    category: 'Frontend',
-    tags: ['React', 'TypeScript', 'HTML5 Canvas', 'WebRTC', 'Tailwind CSS', 'Motion'],
-    githubUrl: 'https://github.com/imapcode/hyperstate-canvas',
-    liveUrl: 'https://hyperstate.imapcode.dev',
-    featured: false,
-    metrics: 'Smooth 60 FPS under 5,000 simultaneous canvas nodes',
+    id: 'youtube-downloader-metadata',
+    title: 'YouTube Downloader & Metadata Embedder',
+    subtitle: 'yt-dlp, pandas, eyed3',
+    filename: 'media_pipeline.json',
+    language: 'json',
+    projectType: 'Personal Project',
+    description: 'Producer-consumer download queue with per-item fault isolation and Excel-driven automated metadata embedding.',
+    category: 'Python',
+    tags: ['Python', 'yt-dlp', 'pandas', 'eyed3'],
+    githubUrl: 'https://github.com/imapcode/youtube-downloader-metadata',
+    liveUrl: 'https://github.com/imapcode/youtube-downloader-metadata',
+    featured: true,
+    metrics: 'Per-item fault isolation & automated ID3 cover embedding',
     highlights: [
-      'Custom spatial index (QuadTree) for instant camera culling and buttery-smooth panning',
-      'Conflict-free Replicated Data Types (CRDTs) for offline-first multi-client state convergence',
-      'Extensible node plugin system with custom connectors and auto-routing bezier algorithms'
-    ]
-  },
-  {
-    id: 'apex-metrics',
-    title: 'Apex Metric Engine',
-    subtitle: 'Time-Series Monitoring & Anomaly Detection Pipeline',
-    description: 'An open-source telemetry ingestion gateway ingesting metrics from Prometheus agents, storing time-series buckets, and triggering intelligent alerts.',
-    category: 'Systems & Backend',
-    tags: ['Go', 'PostgreSQL', 'TimescaleDB', 'React', 'Recharts', 'Docker'],
-    githubUrl: 'https://github.com/imapcode/apex-metrics',
-    liveUrl: 'https://apex.imapcode.dev',
-    featured: false,
-    metrics: 'Reduced alert fatigue by 73% using dynamic statistical deviation thresholds',
-    highlights: [
-      'Efficient downsampling rollups reducing time-series database footprint by 85%',
-      'Configurable alert webhook pipelines forwarding to Slack, PagerDuty, and Discord',
-      'Custom query builder interface with live aggregate previews'
-    ]
-  },
-  {
-    id: 'vault-keys',
-    title: 'Vault CLI & Secret Gate',
-    subtitle: 'Zero-Knowledge Encrypted Secrets Sharing for Teams',
-    description: 'Terminal client and web vault encrypting sensitive configuration keys with client-side AES-256-GCM before crossing the wire, featuring self-destructing access links.',
-    category: 'Developer Tools',
-    tags: ['TypeScript', 'Node.js', 'Web Crypto API', 'React', 'Tailwind'],
-    githubUrl: 'https://github.com/imapcode/vault-cli',
-    liveUrl: 'https://vault.imapcode.dev',
-    featured: false,
-    metrics: 'Over 12,000 secure secrets safely dispatched without persistent traces',
-    highlights: [
-      'Client-side key derivation (PBKDF2) ensuring the server never inspects plaintext secrets',
-      'Burn-after-reading URLs with strict rate limiting and IP geotrust rules',
-      'Seamless CLI command `vault push` / `vault pull` syncing local .env variables'
+      '*Producer-consumer queue* decoupling download from tagging workers',
+      '*Per-item fault isolation*: single failure never halts batch queue',
+      '*Automated metadata pipeline* parsing Excel sheets via `pandas`'
+    ],
+    resumeBullets: [
+      'Designed a producer-consumer queue architecture to decouple download scheduling from metadata embedding, with per-item fault isolation preventing single failures from halting the queue.',
+      'Built an Excel-driven metadata pipeline using pandas to parse song/album data and auto-embed cover art and ID3 tags via eyed3/mutagen, eliminating all manual tagging.'
     ]
   }
 ];
 
-export const WORK_EXPERIENCE: ExperienceItem[] = [
+export const EDUCATION_ITEMS: EducationItem[] = [
   {
-    role: 'Senior Full-Stack Engineer',
-    company: 'Vanguard Systems',
-    period: '2023 — Present',
-    description: [
-      'Architected and led the development of core web applications handling 2.5M+ requests daily with 99.98% uptime.',
-      'Reduced API response latencies by 42% through query optimization, distributed Redis caching, and async task queuing.',
-      'Mentored 6 engineers and spearheaded adoption of modern TypeScript design patterns and automated CI/CD workflows.'
-    ],
-    tech: ['React', 'TypeScript', 'Go', 'Node.js', 'PostgreSQL', 'Docker', 'AWS']
+    institution: 'Chandigarh University',
+    period: '2023 – 2027',
+    degree: 'Bachelor of Engineering in Computer Science',
+    score: 'CGPA: 7.5',
+    details: [
+      'Coursework: Computer Organization, Database Management Systems, Operating Systems, Computer Networks, Object-Oriented Programming, Data Structures and Algorithms.'
+    ]
   },
   {
-    role: 'Full-Stack Developer',
-    company: 'Cognitive Web Labs',
-    period: '2021 — 2023',
-    description: [
-      'Built reactive, modular user interfaces and backend services for collaborative B2B software suites.',
-      'Engineered real-time notification microservice utilizing WebSockets and Redis pub/sub.',
-      'Championed frontend performance audits, elevating Google Lighthouse scores from 64 to 98 across core flows.'
-    ],
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'Express', 'Redis', 'Jest', 'PostgreSQL']
+    institution: 'Maxfort School Dwarka, New Delhi',
+    period: '2019 – 2022',
+    degree: 'Intermediate & Matriculation [CBSE]',
+    score: 'Intermediate: 84% | Matriculation: 80%',
+    details: [
+      'Intermediate (PCM with CS) [2021–2022]: 84%',
+      'Matriculation [2019–2020]: 80%'
+    ]
   }
 ];
+
+// Fallback for experience interface if referenced
+export const WORK_EXPERIENCE = [];

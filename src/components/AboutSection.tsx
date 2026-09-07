@@ -133,11 +133,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
               </motion.a>
 
               {/* Resume */}
-              <motion.button
+              <motion.div
                 onClick={onOpenResumeModal}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between text-left sm:col-span-2 md:col-span-1"
+                className="group p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-500 hover:bg-zinc-900/60 transition-all flex flex-col justify-between text-left sm:col-span-2 md:col-span-1 cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -147,16 +147,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResumeModal, o
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
                   </div>
                   <h4 className="font-bold text-sm text-white group-hover:text-zinc-200">
-                    Resume
+                    Resume / CV
                   </h4>
                   <p className="text-xs text-zinc-400 mt-1 leading-normal">
-                    Curriculum vitae, detailed impact metrics, and education.
+                    Verified curriculum vitae, technical capabilities, and education details.
                   </p>
                 </div>
-                <div className="mt-4 pt-2 border-t border-zinc-900 text-[11px] font-mono text-zinc-500 group-hover:text-zinc-300">
-                  View Document →
+                <div className="mt-4 pt-2 border-t border-zinc-900 text-[11px] font-mono flex items-center justify-between text-zinc-500 group-hover:text-zinc-300">
+                  <span>View Document →</span>
+                  <span className="text-[10px] text-emerald-400">Interactive & PDF</span>
                 </div>
-              </motion.button>
+              </motion.div>
             </div>
           </div>
 

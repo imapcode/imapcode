@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, FileText, ArrowUp } from 'lucide-react';
+import { GitBranch, ArrowUp, FileCode2 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface FooterProps {
@@ -13,67 +13,95 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenHireMod
   };
 
   return (
-    <footer className="border-t border-zinc-200 bg-white py-10 sm:py-12 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-zinc-200">
-          {/* Brand */}
+    <footer className="border-t border-zinc-800/80 bg-[#090a0f] text-zinc-400 font-mono text-xs relative">
+      {/* Upper Footer: Clean Developer Summary */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pb-6 border-b border-zinc-800/60">
+          {/* Brand & Comment */}
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="font-cinematic font-bold text-base text-zinc-950 tracking-wider">
+              <span className="text-white font-semibold text-sm">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="text-xs font-mono text-zinc-500 uppercase">
-                · {PERSONAL_INFO.caption}
+              <span className="text-zinc-600">//</span>
+              <span className="text-zinc-400">
+                {PERSONAL_INFO.realName}
               </span>
             </div>
-            <p className="text-xs text-zinc-600">
-              Full-Stack Web Applications & Distributed Systems.
+            <p className="text-zinc-500 text-xs">
+              <span className="text-zinc-600">// </span>
+              {PERSONAL_INFO.status}
             </p>
           </div>
 
-          {/* Quick links */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5 text-xs font-mono">
+          {/* Clean Quick Links */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
             <a
               href="https://github.com/imapcode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1"
+              className="px-2.5 py-1 rounded bg-zinc-900/60 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800/80 transition-colors"
             >
               GitHub
             </a>
+
             <a
               href="https://linkedin.com/in/imapcode"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1"
+              className="px-2.5 py-1 rounded bg-zinc-900/60 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800/80 transition-colors"
             >
               LinkedIn
             </a>
+
             <button
               onClick={onOpenResumeModal}
-              className="text-zinc-600 hover:text-zinc-950 font-medium transition-colors py-1 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-900/60 hover:bg-zinc-800 text-emerald-400 hover:text-emerald-300 border border-zinc-800/80 transition-colors cursor-pointer"
             >
-              Resume
+              <FileCode2 className="w-3 h-3" />
+              <span>resume.md</span>
             </button>
+
             <button
               onClick={onOpenHireModal}
-              className="text-zinc-950 hover:text-zinc-700 underline font-semibold transition-colors py-1 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700/80 hover:border-zinc-500 transition-colors cursor-pointer"
             >
-              sudo hire me
+              <span className="text-emerald-400 font-bold">$</span>
+              <span>sudo hire me</span>
             </button>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-zinc-600 font-mono">
-          <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</span>
+        {/* Back to top row */}
+        <div className="pt-4 flex items-center justify-between text-[11px] text-zinc-500">
+          <span>// End of buffer</span>
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-lg bg-zinc-100 border border-zinc-200 text-zinc-700 hover:text-zinc-950 hover:bg-zinc-200 transition-colors touch-manipulation cursor-pointer"
-            aria-label="Back to top"
+            className="inline-flex items-center gap-1 text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
-            <ArrowUp className="w-3.5 h-3.5" />
+            <ArrowUp className="w-3 h-3" />
+            <span>top (line 1)</span>
           </button>
+        </div>
+      </div>
+
+      {/* Subtle Bottom IDE Status Line */}
+      <div className="border-t border-zinc-800/60 bg-[#06070a] px-4 sm:px-6 py-1.5 flex items-center justify-between text-[11px] text-zinc-500 select-none">
+        <div className="flex items-center gap-2">
+          <GitBranch className="w-3 h-3 text-emerald-500/80" />
+          <span>main</span>
+          <span className="text-zinc-700">·</span>
+          <span>ready</span>
+        </div>
+
+        <div className="hidden xs:block text-zinc-600">
+          © {new Date().getFullYear()} {PERSONAL_INFO.realName}
+        </div>
+
+        <div className="flex items-center gap-2 text-zinc-500">
+          <span>TypeScript</span>
+          <span className="text-zinc-700">·</span>
+          <span>UTF-8</span>
         </div>
       </div>
     </footer>
