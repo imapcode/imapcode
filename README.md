@@ -44,22 +44,9 @@ portfolio: https://imapcode.vercel.app
 - 💡 **Engineering Philosophy**: Decoupled architectures, memory-efficient data pipelines, and deterministic state management.
 - ⚡ **Fun Fact**: Obsessed with understanding how abstractions work under the hood — from OS registry hooks to hardware-level collision logic.
 
-### 🏆 GitHub Trophies
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=imapcode&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" width="100%" alt="GitHub Trophies" />
-</p>
 
 ### 📊 GitHub Analytics & Real-Time Stats
-
-<p align="center">
-  <a href="https://github.com/imapcode">
-    <img src="https://github-readme-stats.vercel.app/api?username=imapcode&show_icons=true&theme=tokyonight&rank_icon=github&count_private=true&include_all_commits=true&hide_border=true&title_color=38BDF8&icon_color=F59E0B" alt="Aryan's GitHub Stats" height="175" />
-  </a>
-  <a href="https://github.com/imapcode">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=imapcode&layout=compact&theme=tokyonight&hide_border=true&title_color=38BDF8" alt="Top Languages" height="175" />
-  </a>
-</p>
 
 <p align="center">
   <a href="https://github.com/imapcode">
